@@ -51,6 +51,3 @@ Este indicador MT5 sincroniza as Bandas de Bollinger do WINFUT (2min) com o romp
 
 *   **Sinal de Compra**: Fechamento acima da banda superior + IBOV rompendo máxima anterior de 5min.
 *   **Sinal de Venda**: Fechamento abaixo da banda inferior + IBOV rompendo mínima anterior de 5min.
-
----
-*Created with the assistance of Antigravity AI.*
