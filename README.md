@@ -38,8 +38,10 @@ For the indicator to fetch data from the spot market:
 
 ## 📸 Visual Representation
 ![Vivi Indicator in Action](print/Plot.png)
+
 *Exemplo do indicador colorindo o WINFUT com base na correlação do IBOV.*
 ![Indicator Configuration](print/Config.png)
+
 *Configurações recomendadas (WINFUT 2min e IBOV 5min).*
 ---
 
