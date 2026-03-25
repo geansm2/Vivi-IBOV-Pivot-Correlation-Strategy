@@ -36,6 +36,11 @@ For the indicator to fetch data from the spot market:
 1.  Your broker must provide the **IBOV** symbol.
 2.  Ensure you have historical data for the IBOV on the 5-minute timeframe.
 
+## 📸 Visual Representation
+![Vivi Indicator in Action](Print\Plot.png)
+*Exemplo do indicador colorindo o WINFUT com base na correlação do IBOV.*
+![Indicator Configuration](Print\Config.png)
+*Configurações recomendadas (WINFUT 2min e IBOV 5min).*
 ---
 
 ### Português
