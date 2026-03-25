@@ -1,0 +1,79 @@
+// Regras de coloração para WINFUT 2 minutos
+
+// Parâmetros das Bandas de Bollinger
+const
+    seriesIBOV = Asset("IBOV", feedBovespa);
+    
+
+INPUT
+    BBPeriod(20);     // Período das Bandas de Bollinger
+    BBMultiplier(2.0);// Desvio padrão das Bandas de Bollinger
+    WasColored(0);
+     
+VAR
+    BBUpper : FLOAT;       // Banda Superior
+    BBLower : FLOAT;       // Banda Inferior
+    IsPivot : BOOLEAN;   // Indicador de Pivot no IBOV
+    IbovClose : FLOAT;     // Fechamento do IBOV
+    IBOVPivot : FLOAT;
+    IBOVR1 : FLOAT;
+    IBOVS1 : FLOAT;
+    //Variável para rastrear se o candle anterior foi colorido
+    //contador : FLOAT; // 0 = não colorido, 1 = colorido (verde ou vermelho)
+BEGIN
+    
+    // --- Cálculo das Bandas de Bollinger ---
+    BBUpper := BollingerBands(BBMultiplier, BBPeriod, 0); // Banda superior
+    BBLower := BollingerBands(BBMultiplier, BBPeriod, 0) | 1 |; // Banda inferior
+                       
+    // --- Coloração Inicial ---
+    
+    if (Close < BBLower) and (Close < Open) then
+         PaintBar(clRed); // Candle amarelo: negativo fora da banda inferior
+        
+    
+
+    if (Close > BBUpper) and (Close > Open) then
+        PaintBar(clGreen); // Candle amarelo: positivo fora da banda superior
+        
+    
+   // if (Close > BBLower)  or (Close > BBUpper) or (Close < BBUpper) or (Close < Open) then
+     
+    
+    //else WasColored := 0;
+    // --- Obter fechamento do IBOV no time-frame de 5 minutos ---
+    //Ibov := GetAsset("IBOV", feedBovespa);
+    //IBOVClose := IbovClose;
+    // Calcula os valores Pivot para o IBOV
+    
+    //IBOVPivot := Pivot(True, True)|0|;  // Pivot (Linha central)
+    //IBOVR1 := Pivot(True, True)|5|;     // Resistência 1 (R1)
+    //IBOVS1 := Pivot(True, True)|6|;     // Suporte 1 (S1)
+    //Plot(IBOVPivot);
+    //Plot(IBOVR1);
+    //Plot(IBOVS1);
+    //Ibov := Asset("IBOV", feedBovespa); // Ajuste com o método disponível para acessar outro ativo/timeframe
+    
+    // --- Verificar PIVOT no IBOV ---
+    //IsPivot := (* Condição lógica para validar o PIVOT do IBOV *); // Adicione sua lógica de Pivot aqui
+
+    // --- Ajuste de Coloração com base no PIVOT ---
+    //if (IsPivot) then begin
+    //    if (Close < BBLower and Close < Open) then
+    //        PaintBar(clRed);  // Amarelo vira Vermelho
+    //    if (Close > BBUpper and Close > Open) then
+    //        PaintBar(clGreen); // Amarelo vira Verde
+    //end;
+    // Condicional com base no movimento do IBOV
+    //if (ibov.close > IBOVR1) then begin
+         //PlotText("Alta IBOV", 0);
+        //PaintBar(clGreen); // Candle Verde
+    //end;
+    //if (IBOVClose < IBOVS1) then BearP
+    //  PlotText("Baixa IBOV", 2);
+        //PaintBar(clRed);   // Candle Vermelho
+    //end; 
+end;
+
+
+          
